@@ -24,6 +24,7 @@ def account(request, user_id):
     saved_list = paginator.get_page(page_number) 
     
     context = {
+        'paginate': True,
         'saved_list': saved_list,              
     }
     return render(request, 'account/account.html', context)       
