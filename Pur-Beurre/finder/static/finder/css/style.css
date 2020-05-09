@@ -27,9 +27,9 @@
 }
 
 .savedblink{
-  width:30%;
+  
   height:auto;
-  transform: translate(-50%,0%);
+  transform: translate(-190%,40%);
   position:absolute;
   z-index: 100;  
 }
