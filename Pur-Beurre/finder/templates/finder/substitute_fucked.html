@@ -30,14 +30,26 @@
       </div>
     </div>
           <div class=" container-fluid card-footer border-top-0">
-            <div class="row justify-content-between mx-2">
-              <a href="{% url 'finder:detail' sub_product.id %}" class="btn btn-primary bl-1">Selectionnez</a>
-              {% block nav-style %}{% endblock %}            
+            <div class="row justify-content-between mx-2">              
+              <div class="savedblink">
+                <a href="{% url 'finder:detail' sub_product.id %}" class="btn btn-primary" style="margin-top:1rem;max-width:100%">Selectionnez</a>          
+              </div>
+              <!-- {% block nav-style %}{% endblock %}             -->
               {% if user.is_authenticated %}
               <a href="{% url 'finder:save' product.id sub_product.id %}" class='btn-top' role="button"><i class="top_1 fas fa-save"></i></a>
               {% endif %}
             </div>
           </div>          
+          
+          <!-- <div class="savelink">
+            <a href="{% url 'finder:detail' product.id %}" class="btn btn-primary" style="margin-top:1rem;max-width:100%">Selectionnez</a>          
+            {% block nav-style %}{% endblock %}            
+            {% if user.is_authenticated %}
+            <a href="{% url 'finder:save' product.id sub_product.id %}" class='btn-top' role="button"><i class="top_1 fas fa-save"></i></a>
+            {% endif %}
+          </div>
+          </div>
+         -->
     </div>
 </div>
 
