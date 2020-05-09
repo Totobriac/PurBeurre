@@ -26,14 +26,19 @@
   z-index: 100;  
 }
 
-.savedblink{
-  
+.savedblink{  
   height:auto;
   transform: translate(-190%,40%);
   position:absolute;
   z-index: 100;  
 }
 
+.savedblinknologged{  
+  height:auto;
+  transform: translate(-190%,-70%);
+  position:absolute;
+  z-index: 100;  
+}
 
 .nutrition{
   vertical-align:middle;
