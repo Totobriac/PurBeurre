@@ -19,10 +19,9 @@
   z-index: 100;  
 }
 
-.savelink{
-  width:30%;
+.savelink{  
   height:auto;
-  transform: translate(-50%,770%);
+  transform: translate(-20%,750%);
   position:absolute;
   z-index: 100;  
 }
