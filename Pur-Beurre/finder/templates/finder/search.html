@@ -31,9 +31,11 @@
               <h4 class="card-title" style="color:white">"{{product.real_brand}}"</h4>
           </div>
         </div>
-              <div class="card-footer border-top-0">           
-                <a href="{% url 'finder:detail' product.id %}" class="btn btn-primary">Selectionnez</a>          
-              </div>          
+             
+        </div>
+        <div class="savelink">
+          <a href="{% url 'finder:detail' product.id %}" class="btn btn-primary" style="margin-top:1rem;max-width:100%">Selectionnez</a>
+          
         </div>
       </div>
       {% endfor %}

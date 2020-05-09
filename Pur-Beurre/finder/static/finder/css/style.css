@@ -19,6 +19,23 @@
   z-index: 100;  
 }
 
+.savelink{
+  width:30%;
+  height:auto;
+  transform: translate(-50%,770%);
+  position:absolute;
+  z-index: 100;  
+}
+
+.savedblink{
+  width:30%;
+  height:auto;
+  transform: translate(-50%,0%);
+  position:absolute;
+  z-index: 100;  
+}
+
+
 .nutrition{
   vertical-align:middle;
   margin-right:15px;
