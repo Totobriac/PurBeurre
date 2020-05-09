@@ -24,5 +24,6 @@ urlpatterns = [
     path('finder/', include('finder.urls')),
     path('register/', v.register, name="register"),
     path('', include('django.contrib.auth.urls')),
-    path('register/', include('register.urls'))  
+    path('register/', include('register.urls')),
+    path('mentions', views.mentions) 
 ]

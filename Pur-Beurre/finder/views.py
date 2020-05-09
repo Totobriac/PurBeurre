@@ -12,6 +12,10 @@ def index(request):
     template = loader.get_template('finder/main_page.html')
     return HttpResponse(template.render(request=request))
 
+def mentions(request):
+    template = loader.get_template('finder/mentions.html')
+    return HttpResponse(template.render(request=request))
+
 
 def search(request):
     query = request.GET.get('query')

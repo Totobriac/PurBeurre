@@ -27,8 +27,7 @@
                             <button class="btn" type="submit">Chercher</button>
                         </form>
                         {% block nav-style %}{% endblock %}
-                        {% if user.is_authenticated %}                            
-                            <!-- <li class="nav-item px-2"><a class="top fas fa-carrot" href="#"></a></li> -->
+                        {% if user.is_authenticated %}                        
                             <li class="nav-item px-3"><a href="{% url 'register:account' user.id %}" class='btn-top' role="button"><i class="top fas fa-carrot"></i></a></li>                           
                             <li class="nav-item px-3"><a href="/logout" class='btn-top' role="button"><i class="top fas fa-sign-out-alt"></i></a></li>                            
                         {% else %}
@@ -47,7 +46,10 @@
         </div>
         <div>
         <footer class="bg-light py-3">
-            <div class="container" style="overflow:auto"><div class="small text-center text-muted">Copyright © 2020 - Start Bootstrap</div></div>
+            <div class="d-flex flex-row justify-content-center" style="overflow:auto">
+                <div class="small text-center text-muted mr-5"><a href="/mentions">Mentions légales</a></div>
+                <div class="small text-center text-muted"><a href="/#bottom">Contact</a></div>
+            </div>
         </footer>
         </div>
         
