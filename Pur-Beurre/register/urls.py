@@ -5,6 +5,3 @@ app_name = 'register'
 urlpatterns = [
     path('<int:user_id>/', views.account, name='account'),
     ]
-    
-    
-    

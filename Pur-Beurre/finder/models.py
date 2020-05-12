@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
+
 class Product(models.Model):
     name = models.CharField(max_length=2000)    
     brand = models.CharField(max_length=2000)
@@ -15,6 +15,7 @@ class Product(models.Model):
     salt = models.FloatField(max_length=100)
     real_name = models.CharField(max_length=2000)
     real_brand = models.CharField(max_length=2000)
+
 
 class SavedProduct(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE)

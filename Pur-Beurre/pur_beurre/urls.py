@@ -20,10 +20,10 @@ from register import views as v
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
+    path('', views.index, name='index'),
     path('finder/', include('finder.urls')),
     path('register/', v.register, name="register"),
     path('', include('django.contrib.auth.urls')),
     path('register/', include('register.urls')),
-    path('mentions', views.mentions) 
+    path('mentions', views.mentions, name='mentions') 
 ]
