@@ -45,10 +45,10 @@
             <a href="{% url 'finder:save' product.id sub_product.id %}" class='btn-top' role="button"><i
                 class="top_1 fas fa-save"></i></a>
             <a href="{% url 'finder:detail' sub_product.id %}" class=" savedblink btn btn-primary bl-1"
-              style="margin-top:1rem;max-width:100%">Selectionnez</a>
+              style="margin-top:1rem;max-width:100%">Fiche produit</a>
             {% else %}
             <a href="{% url 'finder:detail' sub_product.id %}" class=" savedblinknologged btn btn-primary bl-1"
-              style="margin-top:1rem;max-width:100%">Selectionnez</a>
+              style="margin-top:1rem;max-width:100%">Fiche produit</a>
             {% endif %}
           </div>
         </div>

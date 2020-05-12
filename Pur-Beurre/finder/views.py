@@ -52,7 +52,7 @@ def search(request):
 
     title = "Choissisez le produit qui correspond à votre demande: "
 
-    # paginate the result 
+    # paginate the result
     paginator = Paginator(products_list, 9)
     page = request.GET.get('page', 1)
 
@@ -88,19 +88,20 @@ def substitute(request, product_id):
     # compares the starting 4 categories of the product with those of the other products in the database
     # returns a list of matching products in descending order from their 'nutrition-grade'
     for x in Product.objects.all():
-        match = 0
-        for y in product_categories[0:4]:
-            print(y)
-            if y not in eval(x.categories):
-                break
-            elif y in eval(x.categories):
-                match += 1
-                if match == 4:@whale_neck
-                    match_list.append(x.id)
+        if x.id != product_id:
+            match = 0
+            for y in product_categories[0:4]:
+                print(y)
+                if y not in eval(x.categories):
+                    break
+                elif y in eval(x.categories):
+                    match += 1
+                    if match == 4:
+                        match_list.append(x.id)
 
     substitute_product = Product.objects.filter(id__in=match_list).order_by('nutrition_grade')
 
-    # paginate the result 
+    # paginate the result
     paginator = Paginator(substitute_product, 9)
     page = request.GET.get('page', 1)
 

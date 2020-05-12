@@ -14,11 +14,13 @@
 
 
 <div class="col-lg-4 mx-auto">
-    <div class="p-3 mx-auto" style="background-color: rgba(255, 255, 255, 0.2);">
+    <div class="crispy p-3 mx-auto" style="background-color: rgba(255, 255, 255, 0.65);">
         <form method="POST" class='form-group'>
+            <div class='crispy'>
             {% csrf_token %}
             {{form|crispy}}
-            <button type="submit" class='btn btn-sucess'>Rejoindre</button>       
+            <button type="submit" class='btn btn-sucess'>Rejoindre</button>
+            </div>       
         </form>
     </div>
 </div>
