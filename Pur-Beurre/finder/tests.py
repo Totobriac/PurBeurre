@@ -49,9 +49,25 @@ class TestModels(TestCase):
             real_brand='Belvita',
         )
 
+        self.prod_3 = Product.objects.create(
+            name=['gazpacho','sol'],
+            brand=['espanol'],
+            nutrition_grade='a',
+            picture='https://static.openfoodfacts.org/images/products/541/018/803/1072/front_fr.30.400.jpg',
+            off_id=5410188031073,
+            categories=['aliments et boissons à base de végétaux', " aliments d'origine végétale", ' aliments à base de fruits et de légumes', ' plats préparés', ' soupes', ' réfrigérés', ' soupes de légumes', ' soupes froides', ' plats préparés réfrigérés', ' gaspacho', ' soupes réfrigérées'],
+            fat=2.6,
+            satured_fat=0.4,
+            sugars=3.1,
+            salt=0.66,
+            real_name='Gazpacho Sol',
+            real_brand='Alvalle Espanol',
+        )
+
         self.user = User.objects.create_user(
             username='Ultraman',
             email='ultraman@gmail.com',
+            password='ultraman64'
         )
 
         self.fav = SavedProduct.objects.create(
@@ -60,7 +76,7 @@ class TestModels(TestCase):
             original_product=self.prod_2,
         )
 
-        self.query = {'query': 'Du NutellA'} 
+        self.query = {'query': 'Du NutellA'}
 
     def test_Product(self):
         # test if product is saved in Product db
@@ -83,9 +99,21 @@ class TestModels(TestCase):
         self.assertEquals(self.fav.sub_product, self.prod)
         self.assertEquals(self.fav.original_product, self.prod_2)
 
+    def test_Details(self):
+        # test if product has details page
+        url = reverse('finder:detail', args=[self.prod_3.id])
+        self.response = self.client.get(url)
+        self.assertEqual(self.response.status_code, 200)
+
+    def test_Substitute(self):
+        # test if product has substitute page
+        url = reverse('finder:substitute', args=[self.prod_3.id])
+        self.response = self.client.get(url)
+        self.assertEqual(self.response.status_code, 200)
+
 
 class TestSearch(TestCase):
-    # check user queries 
+    # check user queries
     def test_Search(self):
         # check with unformatted query
         url = reverse('finder:search')
