@@ -10,5 +10,10 @@ env: DJANGO_SETTINGS_MODULE=pur_beurre.settings.travis
 services:
   - postgresql
 
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  
 script:
   - ./Pur-Beurre/manage.py test
+
+
