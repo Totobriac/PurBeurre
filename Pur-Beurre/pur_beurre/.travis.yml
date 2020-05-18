@@ -12,7 +12,3 @@ services:
 
 script:
   - ./manage.py test
-
-branches:
-  only:
-    - staging
