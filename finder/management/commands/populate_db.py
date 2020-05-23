@@ -30,6 +30,7 @@ class Command(BaseCommand):
         return self.categories
 
     def fill_db(self):
+        Product.objects.all().delete()
         # populate the database
         # each product has is OpenFoodsFacts id added to a list to avoid to import twice the same product
         self.product_id_list = []
